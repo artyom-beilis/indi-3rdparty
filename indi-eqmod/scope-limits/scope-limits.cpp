@@ -24,7 +24,7 @@
 #include <cstring>
 
 #include <algorithm> // std::sort
-#include <wordexp.h>
+#include "wordexp_alt.h"
 
 // Predicate ordering horizon points per increasing azimuth
 bool HorizonLimits::cmp(INDI::IHorizontalCoordinates const &h1, INDI::IHorizontalCoordinates const &h2)

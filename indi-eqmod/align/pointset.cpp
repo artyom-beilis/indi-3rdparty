@@ -26,7 +26,7 @@
 
 #include <math.h>
 #include <string.h>
-#include <wordexp.h>
+#include "wordexp_alt.h"
 
 void PointSet::AltAzFromRaDec(double ra, double dec, double jd, double *alt, double *az, INDI::IGeographicCoordinates *pos)
 {
