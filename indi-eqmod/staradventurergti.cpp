@@ -21,4 +21,9 @@
 #include "staradventurergtibase.h"
 #include <memory>
 
+#ifdef INDI_AS_LIBRARY
+// Thus is ugly but does not crash on exit
+static StarAdventurerGTIBase *azgti = new StarAdventurerGTIBase();
+#else
 static std::unique_ptr<StarAdventurerGTIBase> azgti(new StarAdventurerGTIBase());
+#endif

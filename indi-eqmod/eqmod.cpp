@@ -19,4 +19,9 @@
 
 #include "eqmodbase.h"
 
+#ifdef INDI_AS_LIBRARY
+// Thus is ugly but does not crash on exit
+static EQMod *eqmod = new EQMod();
+#else
 static std::unique_ptr<EQMod> eqmod(new EQMod());
+#endif

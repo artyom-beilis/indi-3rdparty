@@ -21,4 +21,9 @@
 #include "staradventurer2i.h"
 #include <memory>
 
+#ifdef INDI_AS_LIBRARY
+// Thus is ugly but does not crash on exit
+static StarAdventurer2i *mount = new StarAdventurer2i();
+#else
 static std::unique_ptr<StarAdventurer2i> mount(new StarAdventurer2i());
+#endif

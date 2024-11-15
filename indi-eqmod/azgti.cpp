@@ -21,4 +21,9 @@
 #include "azgtibase.h"
 #include <memory>
 
+#ifdef INDI_AS_LIBRARY
+// Thus is ugly but does not crash on exit
+static AZGTIBase *azgti = new AZGTIBase();
+#else
 static std::unique_ptr<AZGTIBase> azgti(new AZGTIBase());
+#endif
